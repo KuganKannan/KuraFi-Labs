@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KuraFi Labs</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{ box-sizing:border-box; }
+
+body{
+margin:0;
+font-family:'Inter',sans-serif;
+background:#020617;
+color:#e2e8f0;
+}
+
+/* Navbar */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(2,6,23,0.85);
+backdrop-filter:blur(12px);
+border-bottom:1px solid #1e293b;
+z-index:1000;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:0 20px;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.logo{
+font-weight:600;
+font-size:20px;
+color:white;
+letter-spacing:0.5px;
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+width:36px;
+height:36px;
+}
+
+.nav-links a{
+margin-left:24px;
+text-decoration:none;
+color:#cbd5f5;
+font-size:14px;
+position:relative;
+}
+
+.nav-links a:hover{ color:white; }
+
+.nav-links a::after{
+content:"";
+position:absolute;
+bottom:-6px;
+left:0;
+width:0%;
+height:2px;
+background:#6366f1;
+transition:.25s;
+}
+
+.nav-links a:hover::after{ width:100%; }
+
+/* Hero */
+
+.hero{
+padding-top:140px;
+padding-bottom:120px;
+text-align:center;
+position:relative;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.hero span{ color:#6366f1; }
+
+.hero p{
+max-width:650px;
+margin:auto;
+color:#94a3b8;
+font-size:18px;
+margin-top:20px;
+}
+
+.hero-glow{
+position:absolute;
+top:0;
+left:50%;
+transform:translateX(-50%);
+width:600px;
+height:600px;
+background:radial-gradient(circle,#6366f133,transparent 70%);
+z-index:-1;
+}
+
+/* Sections */
+
+.section{ padding:90px 0; }
+
+.section-title{
+text-align:center;
+font-size:36px;
+margin-bottom:60px;
+}
+
+/* Products */
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:40px;
+}
+
+.product-card{
+background:#020617;
+border:1px solid #1e293b;
+border-radius:14px;
+padding:35px;
+transition:.25s;
+position:relative;
+overflow:hidden;
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+border-color:#6366f1;
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
+}
+
+.product-card h3{
+font-size:26px;
+margin-bottom:10px;
+}
+
+.product-card p{
+color:#94a3b8;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+.product-btn{
+display:inline-block;
+padding:12px 22px;
+border-radius:10px;
+background:#6366f1;
+color:white;
+text-decoration:none;
+font-weight:600;
+font-size:14px;
+}
+
+.product-btn:hover{ background:#4f46e5; }
+
+/* Features */
+
+.features{
+max-width:900px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.feature-card{
+background:#020617;
+border:1px solid #1e293b;
+border-radius:12px;
+padding:25px;
+transition:.25s;
+text-align:center;
+}
+
+.feature-card:hover{
+transform:translateY(-5px);
+border-color:#6366f1;
+}
+
+.feature-card h4{
+font-size:20px;
+margin-bottom:10px;
+color:#6366f1;
+}
+
+.feature-card p{
+color:#94a3b8;
+font-size:15px;
+}
+
+/* Animated AI Grid Background */
+
+.ai-grid{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(#1e293b 1px, transparent 1px),
+linear-gradient(90deg,#1e293b 1px, transparent 1px);
+background-size:40px 40px;
+opacity:0.15;
+z-index:-2;
+animation:gridMove 40s linear infinite;
+}
+
+@keyframes gridMove{
+0%{transform:translateY(0)}
+100%{transform:translateY(40px)}
+}
+
+/* VIDEO SECTION */
+
+.video-wrapper{
+position:relative;
+max-width:900px;
+margin:60px auto;
+border-radius:16px;
+overflow:hidden;
+border:1px solid #1e293b;
+box-shadow:0 20px 60px rgba(0,0,0,0.6);
+transition:.3s;
+}
+
+.video-wrapper:hover{
+transform:translateY(-6px);
+box-shadow:0 30px 70px rgba(0,0,0,0.7);
+}
+
+.video-wrapper iframe{
+width:100%;
+height:500px;
+display:block;
+border:none;
+}
+
+/* Footer */
+
+footer{
+margin-top:80px;
+border-top:1px solid #1e293b;
+padding:50px 0;
+text-align:center;
+color:#64748b;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 30px;
+  max-width:900px;
+  margin:auto;
+}
+
+.review-card {
+  background:#020617;
+  border:1px solid #1e293b;
+  border-radius:12px;
+  padding:25px;
+  transition:.25s;
+  text-align:center;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  border-color: #6366f1;
+}
+
+.review-card h4 {
+  margin-top: 15px;
+  font-size:16px;
+  color:#94a3b8;
+  font-weight:500;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border:1px solid #1e293b;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.faq-question {
+  width:100%;
+  padding:15px 20px;
+  text-align:left;
+  background:#020617;
+  border:none;
+  outline:none;
+  font-size:16px;
+  color:#cbd5f5;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.faq-question.active {
+  background:#6366f1;
+  color:white;
+}
+
+.faq-answer {
+  max-height:0;
+  overflow:hidden;
+  transition: max-height .3s ease;
+  padding:0 20px;
+  background:#0b0f1f;
+  color:#94a3b8;
+}
+.faq-answer p { margin:15px 0; }
+
+.vibe-partner {
+  background: linear-gradient(135deg, #1e293b, #6366f1 80%);
+  color: #f0f9ff;
+  text-align: center;
+  padding: 100px 20px;
+  border-radius: 16px;
+  margin: 60px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.vibe-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.vibe-title span {
+  color: #facc15;
+}
+
+.vibe-text {
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+  color: #e0e7ff;
+}
+
+.vibe-btns a {
+  margin: 0 12px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+
+<div class="logo">
+<img src="logo.png">
+<span>KuraFi Labs</span>
+</div>
+
+<div class="nav-links">
+<a href="#products">Products</a>
+<a href="#features-section">Features</a>
+<a href="#about">About</a>
+<a href="https://github.com/KuganKannan">GitHub</a>
+</div>
+
+</nav>
+</div>
+</header>
+
+<section class="hero">
+
+<div class="hero-glow"></div>
+
+<div class="container">
+
+<h1>Building tools for <span>developers</span></h1>
+
+<p>
+KuraFi Labs creates developer-focused tools designed to simplify debugging,
+improve productivity, and help engineers understand complex systems.
+</p>
+
+</div>
+</section>
+
+<section class="section" id="products">
+
+<div class="container">
+
+<h2 class="section-title">Products</h2>
+
+<div class="products">
+
+<div class="product-card">
+<h3>Punch</h3>
+<p>
+Punch is a lightweight programming language designed for simplicity and experimentation.
+</p>
+<a class="product-btn" href="https://github.com/KuganKannan">View Project</a>
+</div>
+
+<div class="product-card">
+<h3>LogSense</h3>
+<p>
+LogSense analyzes massive log files and helps developers find errors instantly.
+</p>
+<a class="product-btn" href="index.html">Visit LogSense</a>
+</div>
+
+<div class="product-card">
+<h3>ErrorSense <span style="color:#facc15">(Coming Soon)</span></h3>
+<p>
+ErrorSense will integrate into your IDE and explain coding errors using AI.
+</p>
+<a class="product-btn" href="#">Tease Project</a>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<section id="journey-roadmap" style="background:#f5f5f5; padding:60px 20px; font-family: 'Segoe UI', sans-serif;">
+  <div style="max-width:1000px; margin:0 auto; text-align:center;">
+    <h2 style="font-size:36px; margin-bottom:10px; color:#222;">Kurafi Labs Journey</h2>
+    <p style="color:#555; font-size:16px; margin-bottom:50px;">From first coding experiments to AI innovations, follow the path of Kurafi Labs!</p>
+  </div>
+
+  <div style="position: relative; max-width: 900px; margin: 0 auto;">
+    <!-- Vertical Line -->
+    <div style="position:absolute; left:50%; width:4px; background:#222; top:0; bottom:0; transform:translateX(-50%);"></div>
+
+    <!-- Timeline Items -->
+
+    <!-- Age 6: First coding -->
+    <div style="margin-bottom:50px; position:relative;">
+      <div style="position:absolute; left:50%; transform:translateX(-50%); background:#fff; border:4px solid #222; border-radius:50%; width:25px; height:25px; top:0;"></div>
+      <div style="margin-left:calc(50% + 40px); padding:10px 20px; background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1); position:relative;">
+        <h3 style="margin:0; color:#222;">Learned My First Coding</h3>
+        <p style="margin:5px 0 0; color:#555;">Started exploring basic programming concepts at age 6.</p>
+        <span style="position:absolute; top:10px; left:-140px; color:#888; font-size:14px;">Age 6</span>
+      </div>
+    </div>
+
+    <!-- Age 7: Made first game -->
+    <div style="margin-bottom:50px; position:relative;">
+      <div style="position:absolute; left:50%; transform:translateX(-50%); background:#fff; border:4px solid #222; border-radius:50%; width:25px; height:25px; top:0;"></div>
+      <div style="margin-right:calc(50% + 40px); padding:10px 20px; background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1); position:relative; right:0;">
+        <h3 style="margin:0; color:#222;">Created First Game</h3>
+        <p style="margin:5px 0 0; color:#555;">Made my first small game and shared it with friends.</p>
+        <span style="position:absolute; top:10px; right:-140px; color:#888; font-size:14px;">Age 7</span>
+      </div>
+    </div>
+
+    <!-- Age 8: Learned more languages -->
+    <div style="margin-bottom:50px; position:relative;">
+      <div style="position:absolute; left:50%; transform:translateX(-50%); background:#fff; border:4px solid #222; border-radius:50%; width:25px; height:25px; top:0;"></div>
+      <div style="margin-left:calc(50% + 40px); padding:10px 20px; background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1); position:relative;">
+        <h3 style="margin:0; color:#222;">Learned Python & Scratch</h3>
+        <p style="margin:5px 0 0; color:#555;">Expanded my skills by learning Python and visual coding in Scratch.</p>
+        <span style="position:absolute; top:10px; left:-140px; color:#888; font-size:14px;">Age 8</span>
+      </div>
+    </div>
+
+    <!-- Age 9: Created Memes & Simple Tools -->
+    <div style="margin-bottom:50px; position:relative;">
+      <div style="position:absolute; left:50%; transform:translateX(-50%); background:#fff; border:4px solid #222; border-radius:50%; width:25px; height:25px; top:0;"></div>
+      <div style="margin-right:calc(50% + 40px); padding:10px 20px; background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1); position:relative; right:0;">
+        <h3 style="margin:0; color:#222;">Started Making Memes & Tools</h3>
+        <p style="margin:5px 0 0; color:#555;">Created fun projects and small utilities shared online.</p>
+        <span style="position:absolute; top:10px; right:-140px; color:#888; font-size:14px;">Age 9</span>
+      </div>
+    </div>
+
+    <!-- Age 11: Started Kurafi Labs & Punch -->
+    <div style="margin-bottom:50px; position:relative;">
+      <div style="position:absolute; left:50%; transform:translateX(-50%); background:#fff; border:4px solid #222; border-radius:50%; width:25px; height:25px; top:0;"></div>
+      <div style="margin-left:calc(50% + 40px); padding:10px 20px; background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1); position:relative;">
+        <h3 style="margin:0; color:#222;">Started Kurafi Labs & Created Punch</h3>
+        <p style="margin:5px 0 0; color:#555;">Launched Kurafi Labs and made the Punch programming language.</p>
+        <span style="position:absolute; top:10px; left:-140px; color:#888; font-size:14px;">Age 11</span>
+      </div>
+    </div>
+
+    <!-- Age 12-13: YouTube & Projects -->
+    <div style="margin-bottom:50px; position:relative;">
+      <div style="position:absolute; left:50%; transform:translateX(-50%); background:#fff; border:4px solid #222; border-radius:50%; width:25px; height:25px; top:0;"></div>
+      <div style="margin-right:calc(50% + 40px); padding:10px 20px; background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1); position:relative; right:0;">
+        <h3 style="margin:0; color:#222;">YouTube Videos & Interactive Tools</h3>
+        <p style="margin:5px 0 0; color:#555;">Shared tutorials, coding projects, and video experiments.</p>
+        <span style="position:absolute; top:10px; right:-140px; color:#888; font-size:14px;">Age 12-13</span>
+      </div>
+    </div>
+
+    <!-- Future: Errorsense & AI Tools -->
+    <div style="margin-bottom:50px; position:relative;">
+      <div style="position:absolute; left:50%; transform:translateX(-50%); background:#fff; border:4px solid #222; border-radius:50%; width:25px; height:25px; top:0;"></div>
+      <div style="margin-left:calc(50% + 40px); padding:10px 20px; background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1); position:relative;">
+        <h3 style="margin:0; color:#222;">Errorsense (Upcoming)</h3>
+        <p style="margin:5px 0 0; color:#555;">An AI tool that explains coding errors in real-time in your IDE.</p>
+        <span style="position:absolute; top:10px; left:-140px; color:#888; font-size:14px;">Future</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom:50px; position:relative;">
+      <div style="position:absolute; left:50%; transform:translateX(-50%); background:#fff; border:4px solid #222; border-radius:50%; width:25px; height:25px; top:0;"></div>
+      <div style="margin-right:calc(50% + 40px); padding:10px 20px; background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1); position:relative; right:0;">
+        <h3 style="margin:0; color:#222;">Expand AI & Projects</h3>
+        <p style="margin:5px 0 0; color:#555;">Launch more AI tools, tutorials, and interactive demos for users worldwide.</p>
+        <span style="position:absolute; top:10px; right:-140px; color:#888; font-size:14px;">Future</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section vibe-partner">
+  <div class="container">
+    <h2 class="vibe-title">Your <span>Vibe</span> Coding Partner</h2>
+    <p class="vibe-text">
+      KuraFi Labs tools are designed to make coding fun, fast, and intuitive. 
+      Whether you're experimenting, debugging, or building your next big project, 
+      we are your vibe coding companion every step of the way.
+    </p>
+    <div class="vibe-btns">
+      <a class="product-btn" href="#products">Explore Tools</a>
+      <a class="product-btn" href="#faq">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reviews" style="background:#111427;">
+  <div class="container">
+    <h2 class="section-title">What People Say</h2>
+    <div class="reviews">
+      <div class="review-card">
+        <p>"KuraFi Labs tools are a game-changer for developers!"</p>
+        <h4>- Rahul Bhatia, Software Engineer</h4>
+      </div>
+      <div class="review-card">
+        <p>"LogSense saved us hours of debugging. Absolutely brilliant."</p>
+        <h4>- Akshay Singh, DevOps Lead</h4>
+      </div>
+      <div class="review-card">
+        <p>"The AI integration in ErrorSense looks amazing. Can't wait!"</p>
+        <h4>- Devaprasad Jhulelal, Frontend Developer</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" style="background:#0a0f1d;">
+  <div class="container">
+    <h2 class="section-title">FAQ</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">What is Punch?</button>
+      <div class="faq-answer">
+        <p>Punch is a lightweight programming language for experimentation and learning.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Is LogSense free to use?</button>
+      <div class="faq-answer">
+        <p>Yes, LogSense has a free tier for developers and small teams.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">When will ErrorSense launch?</button>
+      <div class="faq-answer">
+        <p>ErrorSense is coming soon. Stay tuned on our GitHub for updates.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const faqs = document.querySelectorAll('.faq-question');
+  faqs.forEach(faq => {
+    faq.addEventListener('click', () => {
+      faq.classList.toggle('active');
+      const answer = faq.nextElementSibling;
+      if(answer.style.maxHeight){
+        answer.style.maxHeight = null;
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+
+<!-- VIDEO SECTION -->
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">See KuraFi Labs in Action</h2>
+
+<div class="video-wrapper">
+
+<iframe
+src="https://www.youtube.com/embed/f0hDp2rvQio"
+title="YouTube video player"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+
+KuraFi Labs © 2026  
+<br>
+Building tools for developers.
+
+</footer>
+
+</body>
+</html>

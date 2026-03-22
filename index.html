@@ -364,6 +364,373 @@ color:#64748b;
 .vibe-btns a {
   margin: 0 12px;
 }
+
+/* Floating Button */
+#ai-toggle{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:60px;
+  height:60px;
+  background:#6366f1;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  transition:.3s;
+  z-index:9999;
+}
+
+#ai-toggle:hover{
+  transform:scale(1.1);
+  background:#4f46e5;
+}
+
+/* Chat Panel */
+#ai-chat{
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  width:340px;
+  height:450px;
+  background:#020617;
+  border:1px solid #1e293b;
+  border-radius:16px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.7);
+
+  opacity:0;
+  transform:translateY(20px) scale(0.95);
+  pointer-events:none;
+
+  transition: all .3s ease;
+  z-index:9999;
+}
+
+#ai-chat.active{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  pointer-events:auto;
+}
+
+/* Header */
+#ai-header{
+  background:linear-gradient(135deg,#6366f1,#4f46e5);
+  padding:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:600;
+}
+
+#ai-header button{
+  background:none;
+  border:none;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* Messages */
+#ai-messages{
+  flex:1;
+  padding:12px;
+  overflow-y:auto;
+  font-size:13px;
+}
+
+/* Chat bubbles */
+.msg{
+  margin-bottom:10px;
+  padding:10px;
+  border-radius:10px;
+  max-width:80%;
+}
+
+.user{
+  background:#6366f1;
+  align-self:flex-end;
+}
+
+.ai{
+  background:#1e293b;
+}
+
+/* Input */
+#ai-input-area{
+  display:flex;
+  border-top:1px solid #1e293b;
+}
+
+#ai-input{
+  flex:1;
+  padding:10px;
+  border:none;
+  outline:none;
+  background:#020617;
+  color:white;
+}
+
+#ai-input-area button{
+  background:#6366f1;
+  border:none;
+  padding:0 15px;
+  color:white;
+  cursor:pointer;
+}
+
+/* Floating Button */
+#ai-toggle{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#6366f1,#4f46e5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  cursor:pointer;
+  box-shadow:0 12px 35px rgba(0,0,0,0.6);
+  transition:.3s;
+  z-index:9999;
+}
+
+#ai-toggle:hover{
+  transform:scale(1.1) rotate(5deg);
+}
+
+/* Chat Panel */
+#ai-chat{
+  position:fixed;
+  bottom:100px;
+  right:20px;
+  width:360px;
+  height:500px;
+  backdrop-filter:blur(18px);
+  background:rgba(2,6,23,0.85);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:18px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+
+  opacity:0;
+  transform:translateY(30px) scale(0.9);
+  pointer-events:none;
+  transition:.35s cubic-bezier(.2,.8,.2,1);
+
+  box-shadow:0 30px 80px rgba(0,0,0,0.8);
+  z-index:9999;
+}
+
+#ai-chat.active{
+  opacity:1;
+  transform:translateY(0) scale(1);
+  pointer-events:auto;
+}
+
+/* Header */
+#ai-header{
+  background:linear-gradient(135deg,#6366f1,#4338ca);
+  padding:14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.ai-header-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.ai-avatar{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:radial-gradient(circle,#fff,#c7d2fe);
+}
+
+.ai-title{
+  font-weight:600;
+}
+
+.ai-status{
+  font-size:12px;
+  color:#bbf7d0;
+}
+
+/* Close button */
+#ai-header button{
+  background:none;
+  border:none;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+
+/* Messages */
+#ai-messages{
+  flex:1;
+  padding:14px;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* Bubbles */
+.msg{
+  padding:10px 14px;
+  border-radius:14px;
+  max-width:75%;
+  font-size:13px;
+  line-height:1.4;
+  animation:fadeIn .2s ease;
+}
+
+.user{
+  align-self:flex-end;
+  background:linear-gradient(135deg,#6366f1,#4f46e5);
+}
+
+.ai{
+  align-self:flex-start;
+  background:#1e293b;
+  border:1px solid #334155;
+}
+
+/* Input */
+#ai-input-area{
+  display:flex;
+  border-top:1px solid #1e293b;
+  padding:8px;
+  gap:8px;
+}
+
+#ai-input{
+  flex:1;
+  padding:10px 12px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  background:#0f172a;
+  color:white;
+  font-size:13px;
+}
+
+#ai-input:focus{
+  box-shadow:0 0 0 2px #6366f1;
+}
+
+#ai-input-area button{
+  background:#6366f1;
+  border:none;
+  border-radius:10px;
+  padding:0 16px;
+  color:white;
+  cursor:pointer;
+  transition:.2s;
+}
+
+#ai-input-area button:hover{
+  background:#4f46e5;
+}
+
+/* Animation */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(5px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.errorsense{
+  padding:120px 20px;
+  text-align:center;
+  position:relative;
+}
+
+/* Glow background */
+.errorsense::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:500px;
+  height:500px;
+  background:radial-gradient(circle,#6366f133,transparent 70%);
+  z-index:-1;
+}
+
+.errorsense-center{
+  max-width:700px;
+  margin:auto;
+}
+
+.errorsense h2{
+  font-size:48px;
+  margin-bottom:20px;
+}
+
+.errorsense span{
+  color:#6366f1;
+}
+
+.errorsense-sub{
+  color:#94a3b8;
+  font-size:18px;
+  margin-bottom:40px;
+  line-height:1.6;
+}
+
+/* Features */
+.errorsense-features{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-bottom:40px;
+}
+
+.feature{
+  padding:12px 18px;
+  border-radius:10px;
+  background:#020617;
+  border:1px solid #1e293b;
+  font-size:14px;
+  color:#cbd5f5;
+  transition:.25s;
+}
+
+.feature:hover{
+  border-color:#6366f1;
+  transform:translateY(-3px);
+}
+
+/* Button */
+.errorsense-btn{
+  display:inline-block;
+  padding:14px 28px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#6366f1,#4f46e5);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  transition:.25s;
+}
+
+.errorsense-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(99,102,241,0.4);
+}
 </style>
 </head>
 
@@ -382,7 +749,7 @@ color:#64748b;
 <a href="#products">Products</a>
 <a href="#features-section">Features</a>
 <a href="#about">About</a>
-<a href="https://github.com/KuganKannan">GitHub</a>
+<a href="https://github.com/KuganCodeArchive">GitHub</a>
 </div>
 
 </nav>
@@ -418,7 +785,7 @@ improve productivity, and help engineers understand complex systems.
 <p>
 Punch is a lightweight programming language designed for simplicity and experimentation.
 </p>
-<a class="product-btn" href="https://github.com/KuganKannan">View Project</a>
+<a class="product-btn" href="https://github.com/KuganCodeArchive/PunchArchive">View Project</a>
 </div>
 
 <div class="product-card">
@@ -426,7 +793,7 @@ Punch is a lightweight programming language designed for simplicity and experime
 <p>
 LogSense analyzes massive log files and helps developers find errors instantly.
 </p>
-<a class="product-btn" href="index.html">Visit LogSense</a>
+<a class="product-btn" href="https://logsense-mu.vercel.app">Visit LogSense</a>
 </div>
 
 <div class="product-card">
@@ -434,7 +801,7 @@ LogSense analyzes massive log files and helps developers find errors instantly.
 <p>
 ErrorSense will integrate into your IDE and explain coding errors using AI.
 </p>
-<a class="product-btn" href="#">Tease Project</a>
+<a class="product-btn" href="#errorsense">Tease Project</a>
 </div>
 
 </div>
@@ -599,6 +966,29 @@ ErrorSense will integrate into your IDE and explain coding errors using AI.
   </div>
 </section>
 
+<section id="errorsense"class="errorsense">
+  <div class="container">
+
+    <div class="errorsense-center">
+      <h2>Meet <span>ErrorSense</span></h2>
+
+      <p class="errorsense-sub">
+        Your AI-powered error assistant that explains issues, suggests fixes, 
+        and helps you debug faster than ever.
+      </p>
+
+      <div class="errorsense-features">
+        <div class="feature">⚡ Instant error explanations</div>
+        <div class="feature">🧠 Smart fix suggestions</div>
+        <div class="feature">💻 Built for real developers</div>
+      </div>
+
+      <a href="#" class="errorsense-btn">Coming Soon</a>
+    </div>
+
+  </div>
+</section>
+
 <script>
   const faqs = document.querySelectorAll('.faq-question');
   faqs.forEach(faq => {
@@ -612,6 +1002,47 @@ ErrorSense will integrate into your IDE and explain coding errors using AI.
       }
     });
   });
+</script>
+
+<script>
+function toggleChat(){
+  document.getElementById("ai-chat").classList.toggle("active");
+}
+
+async function sendMessage(){
+  const input = document.getElementById("ai-input");
+  const messages = document.getElementById("ai-messages");
+
+  const text = input.value.trim();
+  if(!text) return;
+
+  messages.innerHTML += `<div class="msg user">${text}</div>`;
+  input.value = "";
+
+  const typing = document.createElement("div");
+  typing.className = "msg ai";
+  typing.innerText = "Thinking...";
+  messages.appendChild(typing);
+
+  try {
+    const res = await fetch("/api/chat", {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({message:text})
+    });
+
+    const data = await res.json();
+
+    typing.remove();
+
+    messages.innerHTML += `<div class="msg ai">${data.reply}</div>`;
+
+  } catch {
+    typing.innerText = "⚠️ Error connecting";
+  }
+
+  messages.scrollTop = messages.scrollHeight;
+}
 </script>
 
 <!-- VIDEO SECTION -->
@@ -635,6 +1066,35 @@ allowfullscreen>
 
 </div>
 </section>
+
+<!-- Floating AI Button -->
+<div id="ai-toggle" onclick="toggleChat()">💬</div>
+
+<!-- Floating Button -->
+<div id="ai-toggle" onclick="toggleChat()">
+  <span>💬</span>
+</div>
+
+<!-- Chat Panel -->
+<div id="ai-chat">
+  <div id="ai-header">
+    <div class="ai-header-left">
+      <div class="ai-avatar"></div>
+      <div>
+        <div class="ai-title">Kura AI</div>
+        <div class="ai-status">● Online</div>
+      </div>
+    </div>
+    <button onclick="toggleChat()">✕</button>
+  </div>
+
+  <div id="ai-messages"></div>
+
+  <div id="ai-input-area">
+    <input id="ai-input" placeholder="Ask Kura AI anything..." />
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
 
 <footer>
 
